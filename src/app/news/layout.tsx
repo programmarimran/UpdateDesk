@@ -1,11 +1,12 @@
 export default function NewsLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  return <section>
-    <h1>News Section</h1>
-    <p>Welcome to the news section. Here you will find the latest updates and articles.</p>
-    {children}
+  return (
+    <section className="max-w-7xl w-11/12 mx-auto py-12">
+    
+      {children}
     </section>
+  );
 }

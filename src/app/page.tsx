@@ -5,9 +5,9 @@ import { NewsItem } from "@/types/news";
 
 
 export default async function Home() {
-  const data=await fetch("http://localhost:5000/api/news");
+  const data=await fetch("https://news-portal-server-flame.vercel.app/api/news");
   const newses = await data.json();
-  console.log(newses);
+  // console.log(newses);
   return (
 
     <>

@@ -10,14 +10,17 @@ interface NewsItemprops {
 }
 
 const NewsCard = ({ news }: NewsItemprops) => {
+  // console.log(news)
   return (
     <div>
-      <Link href="/news/1" className="block">
-        <div className="  hover:scale-105 transition-all duration-300 ">
+      <Link href={`/news/${news._id}`} className="block">
+        <div className="   hover:scale-105 transition-all duration-300 ">
           <Image
             src={news?.imageUrl}
-            // placeholder="blur"
-            className="rounded-lg"
+            priority={true}
+           	placeholder="blur"
+            blurDataURL="data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoQAAsABUB8JbACdACwBNa/YCYAAP7bqFnqGusb+eYXTWIHPFjJkco/m5F2QWCDi/G+A41D9cUyjErTRMxsEsJrwAA="
+            className="rounded-lg h-[273px]"
             alt="Picture of the News card"
             width={500}
             height={500}
