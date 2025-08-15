@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const revalidate = 60;
 export async function generateStaticParams() {
-  const posts: NewsItem[] = await fetch("http://localhost:5000/api/news").then(
+  const posts: NewsItem[] = await fetch("https://news-portal-server-flame.vercel.app/api/news").then(
     (res) => res.json()
   );
   return posts.map((post) => ({
@@ -15,10 +15,10 @@ export default async function Page({
   params,
 }: {
   params: Promise<{ id: string }>;
-}) {
+}) {  
   const { id } = await params;
   const post: NewsItem = await fetch(
-    `http://localhost:5000/api/news/${id}`
+    `https://news-portal-server-flame.vercel.app/api/news/${id}`
   ).then((res) => res.json());
   return (
     <section className="py-12">
@@ -65,7 +65,7 @@ export default async function Page({
         {/* Full Description */}
         <p className=" mb-4">{post?.description}</p>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero,
+          adipisicing elit. Libero,
           fugit, adipisci commodi ea alias voluptatibus consequuntur neque nulla
           ex dicta reiciendis cupiditate quisquam quae. Vitae provident fugit
           officia fuga ipsam! Lorem ipsum dolor sit amet consectetur adipisicing

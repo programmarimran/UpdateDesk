@@ -7,8 +7,8 @@ const fetchNews = async (
 ): Promise<NewsItem[]> => {
   try {
     const data = await fetch(
-      // `https://news-portal-server-flame.vercel.app/api/news?category=${category}&search=${search}`
-      `http://localhost:5000/api/news?category=${category==="default"||category==="all"?"":category}&search=${search}`
+      `https://news-portal-server-flame.vercel.app/api/news?category=${category==="default"||category==="all"?"":category}&search=${search}`
+      // `http://localhost:5000/api/news?category=${category==="default"||category==="all"?"":category}&search=${search}`
     );
     const newses = await data.json();
     return newses;
