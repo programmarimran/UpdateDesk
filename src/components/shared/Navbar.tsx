@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { use, useEffect, useRef } from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,12 +14,18 @@ import { Button } from "../ui/button";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { usePathname } from "next/navigation";
 import { RxCross2 } from "react-icons/rx";
+import { pinyon } from "@/lib/utils";
+import { ThemeContext } from "@/context/themeContext";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = React.useState(false);
   // const menuRef = useRef(null);
   const menuRef = useRef<HTMLDivElement | null>(null);
+
+  const user=use(ThemeContext)
+  
+  console.log(user?.name)
 
   // useEffect(() => {
   //   const handleClickOutside = (event) => {
@@ -63,7 +69,7 @@ const Navbar = () => {
         {/* logo */}
         <div>
           <Link href="/" className="text-2xl font-bold">
-            <span className="text-blue-500">Update</span>Desk
+            <span className={` text-primary ${pinyon.className}`}>Update</span>Desk
           </Link>
         </div>
 
