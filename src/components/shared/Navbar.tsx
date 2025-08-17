@@ -23,9 +23,11 @@ const Navbar = () => {
   // const menuRef = useRef(null);
   const menuRef = useRef<HTMLDivElement | null>(null);
 
-  const user=use(ThemeContext)
+  const contex=use(ThemeContext)
+  const themeToggle:(()=>void)|undefined=contex?.themeToggle
+  const  isDarkMode=contex?.isDarkMode
   
-  console.log(user?.name)
+
 
   // useEffect(() => {
   //   const handleClickOutside = (event) => {
@@ -154,8 +156,8 @@ const Navbar = () => {
         {/* night light toggle and login button */}
         <div className="hidden md:flex flex-row items-center space-x-4">
           <div className="flex items-center space-x-4">
-            <span>Night mode</span>
-            <Switch />
+            <span className={`${!isDarkMode? "text-red-500":""}`}>Night mode</span>
+            <div onClick={()=>themeToggle?.()}><Switch /></div>
           </div>
           <div>
             <Link href="/login">

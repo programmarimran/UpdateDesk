@@ -19,7 +19,7 @@ const Banner = () => {
       </div>
       <div className="flex-1 ml-4 w-full flex-col space-y-6 items-start justify-start  h-full">
         <Badge className="mb-2">Latest News</Badge>
-        <h1 className={`text-2xl font-bold ${playwrite.className}`}>
+        <h1 className={`text-2xl font-bold ${playwrite.className} dark:text-red-600 text-blue-500`}>
           AI Adoption Accelerates Across Fortune 500 Companies
         </h1>
         <h1 className=" text-white bg-primary">this is my future plan  is my future plan is my future plan is my future plan </h1>

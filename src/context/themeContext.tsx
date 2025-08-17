@@ -21,6 +21,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     } else {
       document.body.classList.remove("dark");
     }
-  }, []);
+  }, [isDarkMode]);
   return <ThemeContext.Provider value={{themeToggle,isDarkMode}}>{children}</ThemeContext.Provider>;
 };
